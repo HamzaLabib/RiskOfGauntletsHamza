@@ -6,19 +6,45 @@ using UnityEngine.Tilemaps;
 public class BombExplosion : MonoBehaviour
 {
     public float timeToExplode = 5f;
-    public Animator explosionAnim;
-    bool isExplode = false;
+    public Animator explosion;
+    Animator effect;
 
-    public void Explosion()
+    SpriteRenderer sr;
+    bool isExploded = false;
+    float explosionLifeTime = 1.10f;
+
+    private void Awake()
     {
-        if (!isExplode)
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (!isExploded)
+            Explosion();
+        if (isExploded)
+            DestroyOurObjects();
+    }
+
+    void Explosion()
+    {
+        timeToExplode -= Time.deltaTime;
+        if (timeToExplode < 0)
         {
-            timeToExplode -= Time.deltaTime;
-            if (timeToExplode < 0)
-            {
-                explosionAnim.enabled = true;
-                timeToExplode = 5f;
-            }
+            effect = Instantiate(explosion);
+            effect.transform.position = this.transform.position;
+            sr.enabled = false;
+            isExploded = true;
+        }
+    }
+
+    void DestroyOurObjects()
+    {
+        explosionLifeTime -= Time.deltaTime;
+        if (explosionLifeTime < 0)
+        {
+            GameObject.Destroy(effect.gameObject);
+            GameObject.Destroy(this.gameObject);
         }
     }
 }

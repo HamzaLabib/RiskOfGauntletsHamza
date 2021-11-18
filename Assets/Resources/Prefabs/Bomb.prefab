@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421574680234904579}
   - component: {fileID: 6948866995591583710}
-  - component: {fileID: 6450715480192998749}
+  - component: {fileID: -3616781028981774358}
   m_Layer: 9
   m_Name: Bomb
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6450715480192998749
+--- !u!114 &-3616781028981774358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,4 +96,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b79c21fee63834699b8c19c1de1a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionAnim: {fileID: 1562904509256250368, guid: b9abdec9826a4164b9ec42a8a0c02471, type: 3}
+  timeToExplode: 5
+  explosion: {fileID: 1562904509256250368, guid: b9abdec9826a4164b9ec42a8a0c02471, type: 3}

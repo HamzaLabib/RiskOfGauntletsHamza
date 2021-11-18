@@ -7,8 +7,14 @@ public class BombCreation : MonoBehaviour
     public GameObject toClone;
     public Transform bombPos;
     GameObject bomb;
-
+    
     bool isCloned = false;
+
+    private void Update()
+    {
+        if (!bomb)
+            isCloned = false;
+    }
 
     public void BombCreator()
     {
