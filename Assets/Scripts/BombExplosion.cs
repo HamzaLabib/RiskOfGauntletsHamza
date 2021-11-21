@@ -7,11 +7,14 @@ public class BombExplosion : MonoBehaviour
 {
     public float timeToExplode = 5f;
     public Animator explosion;
+    public AudioSource explosionEffect;
+    
     Animator effect;
-
     SpriteRenderer sr;
+
     bool isExploded = false;
     float explosionLifeTime = 1.10f;
+
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class BombExplosion : MonoBehaviour
         {
             effect = Instantiate(explosion);
             effect.transform.position = this.transform.position;
+            explosionEffect.Play();
             sr.enabled = false;
             isExploded = true;
         }

@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4399426463670461256}
   - component: {fileID: 1562904509256250368}
   - component: {fileID: 1937818261738909459}
+  - component: {fileID: -7463309159619312215}
+  - component: {fileID: 3108612881712379488}
   m_Layer: 9
   m_Name: BombEffect
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,3 +105,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &-7463309159619312215
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508871838251017037}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09, y: 0.03}
+  serializedVersion: 2
+  m_Radius: 0.8
+--- !u!114 &3108612881712379488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508871838251017037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425b62c2ca1eccf42a4a1d43b56f0ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explodedEnemy: {fileID: 944049105582861483, guid: 2d63328728d9380498b34c74f043668b, type: 3}
+  explosion: {fileID: 1562904509256250368}
+  explosionEffect: {fileID: 0}

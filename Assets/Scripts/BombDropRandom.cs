@@ -8,6 +8,9 @@ public class BombDropRandom : MonoBehaviour
     Transform bombPos;
     public GameObject toClone;
     public float cooling = 10f;
+    
+    bool isDropped = false;
+    float bombcolliderOn = 0.5f;
 
     void Awake()
     {
@@ -17,6 +20,10 @@ public class BombDropRandom : MonoBehaviour
     void Update()
     {
         Invoke("BombDrop", Random.Range(2, 10));
+        if (isDropped)
+            BombColliderManage();
+        if (!bomb)
+            isDropped = false;
     }
 
     void BombDrop()
@@ -25,9 +32,17 @@ public class BombDropRandom : MonoBehaviour
         if (cooling < 0)
         {
             bomb = GameObject.Instantiate(toClone);
+            bomb.GetComponent<Collider2D>().enabled = false;
             bomb.transform.position = bombPos.position;
+            isDropped = true;
             cooling = 10f;
         }
     }
 
+    void BombColliderManage()
+    {
+        bombcolliderOn -= Time.deltaTime;
+        if (bombcolliderOn < 0)
+            bomb.GetComponent<Collider2D>().enabled = true;
+    }
 }

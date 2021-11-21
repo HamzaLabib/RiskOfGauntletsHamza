@@ -6,16 +6,6 @@ public class PlayerDeath : MonoBehaviour
 {
     public Collider2D player;
 
-    void Awake()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
     void Death()
     {
         GameObject.Destroy(player.gameObject);
